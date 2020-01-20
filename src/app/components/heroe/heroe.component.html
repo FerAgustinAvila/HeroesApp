@@ -1,0 +1,25 @@
+<h1 class="animated fadeIn" > {{ heroe.nombre | uppercase }} <small> ({{ heroe.aparicion | date:'y' }})</small> </h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
+        <br><br>
+        <a [routerLink]="['/heroes']" routerLinkActive="router-link-active"  class="btn btn-outline-danger btn-block" >Regresar </a>
+    </div>
+
+    <div class="col-md-8">
+        <h3> {{ heroe.nombre}}  </h3>
+        <hr>
+        <p>
+           {{ heroe.bio }} 
+        </p>
+        <div class="text-center">
+            <img [src]="logoComic" [alt]="heroe.casa">
+            <!-- <img class="img-logo" [src]="(heroe.casa == 'Marvel')? 'assets/img/lmarvelg.png' : 'assets/img/ldcg.jpg'" [alt]="(heroe.casa == 'Marvel')? 'Marvel' :'DC'"> CON ESTA SOLUCION NO HARIA FALTA LA CONSULTA EN EL HEROE.COMPONENTS -->
+
+            <!-- <img *ngIf="heroe.casa=='Marvel'" src="assets/img/lmarvelg.png" >
+            <img *ngIf="heroe.casa=='DC'" src="assets/img/ldcg.png" > -->
+        </div>
+    </div>
+</div>
